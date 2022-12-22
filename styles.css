@@ -1,0 +1,153 @@
+*,*::before,*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.max-witdh{
+    max-width: 1100px;
+    margin: auto;
+}
+
+img{
+    width: 65%;
+}
+
+body{
+
+}
+
+#full-body{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 4fr 4fr 1fr;
+    grid-template-areas: 
+    'a b b'
+    'c c c'
+    'c c c'
+    'd d d';
+}
+
+.logo{
+    grid-area: a;
+    margin: 5% 0 auto 0;
+}
+
+.heading{
+    grid-area: b;
+    margin: 0 auto 0 auto;
+    width: 40%;
+    min-width: 315px;
+}
+
+#image{
+    width: 100%;
+    height: 100%;
+    margin-top: 5%;
+    grid-area: c ;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    'a b c'
+    'd e f';
+}
+
+.image{
+    min-width: 200px;
+    max-width: 350px;
+    position: relative;
+}
+.name{
+    font-weight: bolder;
+    margin-top: 3%;
+}
+.post{
+    font-family: serif;
+    position: absolute;
+    top: 25px;
+    right: 60px;
+    transform: rotate(90deg);
+}
+.img1{
+    grid-area: a;
+}
+.img2{
+    grid-area: b;
+    margin-top: auto;
+}
+.img3{
+    grid-area: c;
+}
+.img4{
+    grid-area: d;
+}
+.img5{
+    grid-area: e;
+    margin-top: auto;
+}
+.img6{
+    grid-area: f;
+}
+
+.foot{
+    grid-area: d;
+    margin: 5% auto;
+}
+
+@media (max-width: 400px) {
+    #full-body{
+        padding: 1rem;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 4fr 4fr 1fr;
+        grid-template-areas: 
+        'a a'
+        'b b'
+        'c c'
+        'c c'
+        'd d';
+    }
+
+
+    .heading{
+        margin-bottom: 1rem;
+    }
+
+    #image{
+        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 75% 75%;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: 
+        'a b'
+        'c d'
+        'e f';
+    }
+
+    .name{
+        font-size: .9rem;
+    }
+
+    .post{
+        right: 30px;
+        font-size: .7rem;
+    }
+
+    .img4{
+        grid-area: d;
+        margin-top: auto;
+    }
+    .img5{
+        grid-area: e;
+        margin-top: 0;
+    }
+    .img6{
+        grid-area: f;
+        margin-top: auto;
+    }
+
+    .foot{
+        grid-area: d;
+        margin: 20% auto;
+    }
+}
